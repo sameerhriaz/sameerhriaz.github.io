@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Custom CFD Simulation For Convective Heat Transfer</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=0.75, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Back to Projects</a>
+					</header>
+
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Custom CFD Simulation For Convective Heat Transfer</h1>
+									<p>Numerical simulation of low-Reynolds number two-dimensional convective flow heat transfer around a cylindrical body.</p>
+								</header>
+								<div class="image main"><img src="Heat Transfer CFD\normal2.png" alt="Single cylinder simulation at t=3s"" onclick="enlargeImage(this)" /></div>
+								<div id="myModal" style="display:none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.9);">
+									<span class="close" onclick="closeModal()" style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+									<img class="modal-content" id="img01" style="margin: auto; display: block; width: 100%; max-width: 700px;">
+									<div id="caption" style="color: #ffffff; font-size: 20px; padding: 10px 20px; text-align: left;"></div>
+								  </div>
+								  
+								  <div class="row">
+									<div class="col-4 col-12-small">
+
+										<h3>What?</h3>
+										<ul>
+											<li>Simulation of low-Reynolds number (Re=200) two-dimensional convective flow heat transfer around a cylindrical body</li>
+											<li>Coded for two geometries, a lone cylinder and two cylinders located along the centerline with varying distances between the two</li>
+										</ul>
+									</div>
+									<div class="col-4 col-12-small">
+
+										<h3>How?</h3>
+										<ul>
+											<li>Coded in MATLAB</li>
+											<li>Determined grid spacing and boundary conditions for a given Reynolds number and inflow velocity</li>	
+											<li>Used Poission's equation to numerically solve for initial stream function array using a finite-differene approximation method</li>
+											<li>Computed vorticity, temperature, stream function, and heat flux after initializing vorticity and cylinder temperature</li>
+											<li>Calculated final outflow boundary conditions and total heat flux out of cylinder bodies </li>
+											<li>Verified results using the shape of initialized streamfunction and similar simulations</li>
+										</ul>					
+									</div>	
+									<div class="col-4 col-12-small">
+
+										<h3>Results</h3>
+										<ul>
+											<li>Accuracy of results was consistent with expected behavior based on calculations and similar simulations</li>
+											<li>~2.5 hour runtime on an average personal computer using 3995 timesteps</li>
+											<li>Of the two spacings tested, cylinders spaced further apart had a greater rate of heat exchange suggesting there is a sweet spot distance for optimal heat exchanger design</li>
+											<li><a href="https://drive.google.com/drive/folders/1u7-xVvU9gEZfd0DaoTdD0vMTlYi9WQLC?usp=drive_link">Simulation Videos</a></li>
+										</ul>					
+									</div>	
+									<span class="image fit"><img src="Heat Transfer CFD\normal1.png" alt="Single cylinder simulation at t=1s" onclick="enlargeImage(this)" /></span>
+
+									<div class="box alt">
+											<div class="row gtr-50 gtr-uniform">
+												<div class="col-6"><span class="image fit"><img src="Heat Transfer CFD\closesim.png"" alt="Simulation for two cylinders 75 gridspaces apart at t=3s" onclick="enlargeImage(this)" /></span></div>
+												<div class="col-6"><span class="image fit"><img src="Heat Transfer CFD\longsim.png" alt="Simulation for two cylinders 125 gridspaces apart at t=3s" onclick="enlargeImage(this)" /></span></div>
+									
+								</section>
+
+					</div>
+
+				<!-- Footer -->
+				
+					<footer id="footer">
+						
+						<section class="split contact"> 
+						<div style="display: flex; justify-content: center; margin-top: 2em">
+							<p>	<h3><a href="index.html"> Return to Main Page</a></h3></p>
+						</div>
+						</section>
+					</footer>
+			
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul>Contact Me:  sriaz@princeton.edu</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/enlargeimage.js"></script>
+
+	</body>
+</html>
