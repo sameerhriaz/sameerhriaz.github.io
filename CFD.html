@@ -11,6 +11,68 @@
 		<meta name="viewport" content="width=device-width, initial-scale=0.75, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+				<!-- Carousel CSS -->
+				<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+				<style>
+				.carousel-control-prev,
+				.carousel-control-next {
+					position: absolute;
+		
+					width: 1%; /* Adjust the width of the control area */
+					height: 500px; /* Fixed height */
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+		
+				.carousel-control-prev-icon,
+				.carousel-control-next-icon {
+					background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+					border-radius: 30%; /* Rounded corners */
+					padding: 30px; /* Padding around the icon */
+				}
+		
+				.carousel-control-prev {
+					left: 0;
+				}
+		
+				.carousel-control-next {
+					right: 0;
+				}
+				.carousel-item {
+					height: 700px;
+				}
+				.carousel-item img {
+					width: 100%;
+					height: 100%;
+					object-fit: scale-down;
+				
+				}
+				.carousel {
+				position: relative;
+				width: 100%;
+				max-width: 100%; /* Ensure the carousel does not exceed the width of its container */
+				}
+		
+		
+				.carousel-caption {
+					background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+					bottom: 0; /* Position at the bottom */
+					left: 0;
+					right: 0;
+					padding: 30px; /* Padding around the text */
+				}
+		
+				#main {
+					width: 75%;
+					font-size: .75rem; /* Decrease the font size */
+					padding: 0px;
+		
+				}
+				#footer{ 
+					width: 75%
+				}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -29,7 +91,7 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<h1>Custom CFD Simulation For Convective Heat Transfer</h1>
+									<h1 style="font-size: 3.5em">Custom CFD Simulation For Convective Heat Transfer</h1>
 									<p>Numerical simulation of low-Reynolds number two-dimensional convective flow heat transfer around a cylindrical body.</p>
 								</header>
 								<div class="image main"><img src="Heat Transfer CFD\normal2.png" alt="Single cylinder simulation at t=3s"" onclick="enlargeImage(this)" /></div>
@@ -67,16 +129,46 @@
 											<li>Accuracy of results was consistent with expected behavior based on calculations and similar simulations</li>
 											<li>~2.5 hour runtime on an average personal computer using 3995 timesteps</li>
 											<li>Of the two spacings tested, cylinders spaced further apart had a greater rate of heat exchange suggesting there is a sweet spot distance for optimal heat exchanger design</li>
-											<li><a href="https://drive.google.com/drive/folders/1cDnIe5CkNBcdi3zUj22H4oJS9q6oAXtA?usp=sharing">Simulation Videos</a></li>
+											<li><a href="https://drive.google.com/drive/folders/1u7-xVvU9gEZfd0DaoTdD0vMTlYi9WQLC?usp=drive_link">Simulation Videos</a></li>
 										</ul>					
 									</div>	
-									<span class="image fit"><img src="Heat Transfer CFD\normal1.png" alt="Single cylinder simulation at t=1s" onclick="enlargeImage(this)" /></span>
 
-									<div class="box alt">
-											<div class="row gtr-50 gtr-uniform">
-												<div class="col-6"><span class="image fit"><img src="Heat Transfer CFD\closesim.png"" alt="Simulation for two cylinders 75 gridspaces apart at t=3s" onclick="enlargeImage(this)" /></span></div>
-												<div class="col-6"><span class="image fit"><img src="Heat Transfer CFD\longsim.png" alt="Simulation for two cylinders 125 gridspaces apart at t=3s" onclick="enlargeImage(this)" /></span></div>
-									
+									<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+										<ol class="carousel-indicators">
+											<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+											<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+											<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+										</ol>
+										<div class="carousel-inner">
+											<div class="carousel-item active">
+												<img src="Heat Transfer CFD\normal1.png" class="d-block w-100" alt="Single cylinder simulation at t=1s">
+												<div class="carousel-caption d-none d-md-block">
+												<p>Single cylinder simulation at t=1s</p>
+												</div>
+											</div>
+											<div class="carousel-item">
+												<img src="Heat Transfer CFD\closesim.png" class="d-block w-100" alt="Second slide">
+												<div class="carousel-caption d-none d-md-block">
+													<p>Simulation for two cylinders 75 gridspaces apart at t=3s</p>
+													</div>
+											</div>
+											<div class="carousel-item">
+												<img src="Heat Transfer CFD\longsim.png" class="d-block w-100" alt="Third slide">
+												<div class="carousel-caption d-none d-md-block">
+													<p>Simulation for two cylinders 125 gridspaces apart at t=3s</p>
+													</div>
+											</div>
+										</div>
+										<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+											<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+											<span class="sr-only">Previous</span>
+										</a>
+										<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+											<span class="carousel-control-next-icon" aria-hidden="true"></span>
+											<span class="sr-only">Next</span>
+										</a>
+									</div>
+
 								</section>
 
 					</div>
@@ -108,6 +200,10 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/enlargeimage.js"></script>
+			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 	</body>
 </html>
